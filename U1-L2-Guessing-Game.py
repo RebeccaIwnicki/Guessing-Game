@@ -7,10 +7,7 @@ mynumber=(random.randint(1,100)) #Assign the secret number, randomly generated b
 
 print("Let's play a guessing game, I'm thinking of a number between 1 and 100...")
 
-turn=0 #Assign a starting number for the 'turn' variable
-
-while True:
-  turn=turn+1 #Add 1 to 'turn' each time around
+for turn in range (1, 6):
   usernumber = int(input("\nTurn number: " + str(turn) + "\nGuess a number:"))
   
   if usernumber < mynumber:
@@ -20,3 +17,6 @@ while True:
   else:
     print("You read my mind! It was " + str(mynumber) + ", well done!")
     break #End while loop once number has been guessed
+  
+else:
+  print("Game over! You've used all 5 turns. The number was " + str(mynumber) + ".")
